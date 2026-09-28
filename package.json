@@ -1,0 +1,8 @@
+{
+  "name": "splinterlands-rift-walker",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": { "start": "node server.mjs", "test": "node --test", "audit": "node scripts/audit-expeditions.mjs", "audit:economy": "node scripts/audit-economy.mjs", "refresh-data": "node scripts/refresh-data.mjs" },
+  "engines": { "node": ">=20" }
+}

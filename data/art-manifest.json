@@ -1,0 +1,278 @@
+[
+  {
+    "id": 11,
+    "name": "Elemental Phoenix"
+  },
+  {
+    "id": 44,
+    "name": "Angel of Light"
+  },
+  {
+    "id": 56,
+    "name": "Selenia Sky"
+  },
+  {
+    "id": 111,
+    "name": "Valnamor"
+  },
+  {
+    "id": 177,
+    "name": "Phantom of the Abyss"
+  },
+  {
+    "id": 188,
+    "name": "Kron the Undying"
+  },
+  {
+    "id": 235,
+    "name": "Mimosa Nightshade"
+  },
+  {
+    "id": 236,
+    "name": "Yodin Zaku"
+  },
+  {
+    "id": 255,
+    "name": "Robo-Dragon Knight"
+  },
+  {
+    "id": 278,
+    "name": "Scarred Llama Mage"
+  },
+  {
+    "id": 352,
+    "name": "Doctor Blight"
+  },
+  {
+    "id": 506,
+    "name": "Lux Vega"
+  },
+  {
+    "id": 679,
+    "name": "Death Ranger"
+  },
+  {
+    "id": 804,
+    "name": "Nim Guard Captain"
+  },
+  {
+    "id": 805,
+    "name": "Spinetail Fiend"
+  },
+  {
+    "id": 806,
+    "name": "Black Widow"
+  },
+  {
+    "id": 807,
+    "name": "Savage Butcher"
+  },
+  {
+    "id": 808,
+    "name": "Arcane Curator"
+  },
+  {
+    "id": 809,
+    "name": "Thalgrimore"
+  },
+  {
+    "id": 810,
+    "name": "Lenore Nevermore"
+  },
+  {
+    "id": 811,
+    "name": "Sorrow Harvester"
+  },
+  {
+    "id": 812,
+    "name": "Little Sister"
+  },
+  {
+    "id": 813,
+    "name": "Chaos Furybringer"
+  },
+  {
+    "id": 814,
+    "name": "Frankarsgard"
+  },
+  {
+    "id": 815,
+    "name": "Sturdy Axe Warden"
+  },
+  {
+    "id": 816,
+    "name": "Scales of Justice"
+  },
+  {
+    "id": 817,
+    "name": "Ember Roast Sow"
+  },
+  {
+    "id": 818,
+    "name": "Barthalamas"
+  },
+  {
+    "id": 819,
+    "name": "Ash Archer"
+  },
+  {
+    "id": 820,
+    "name": "Echelon"
+  },
+  {
+    "id": 821,
+    "name": "Agniavan Salamander"
+  },
+  {
+    "id": 822,
+    "name": "Dread Tafarian"
+  },
+  {
+    "id": 823,
+    "name": "Mad Gearhead"
+  },
+  {
+    "id": 824,
+    "name": "Wilhelmdale Deputy"
+  },
+  {
+    "id": 825,
+    "name": "Vicious Quilliun"
+  },
+  {
+    "id": 826,
+    "name": "Time Bandit"
+  },
+  {
+    "id": 827,
+    "name": "Aurelia"
+  },
+  {
+    "id": 828,
+    "name": "Kicking Roc"
+  },
+  {
+    "id": 829,
+    "name": "Glimmermancer"
+  },
+  {
+    "id": 830,
+    "name": "Giam Root"
+  },
+  {
+    "id": 831,
+    "name": "Twice Yester Knight"
+  },
+  {
+    "id": 832,
+    "name": "Codex Sage"
+  },
+  {
+    "id": 833,
+    "name": "Hungry Ulund"
+  },
+  {
+    "id": 834,
+    "name": "Paprikash"
+  },
+  {
+    "id": 835,
+    "name": "Sherringham Logger"
+  },
+  {
+    "id": 836,
+    "name": "Incessant Sage"
+  },
+  {
+    "id": 837,
+    "name": "Wild Horse Tamer"
+  },
+  {
+    "id": 838,
+    "name": "Lady Amara"
+  },
+  {
+    "id": 839,
+    "name": "Celestial Guardian"
+  },
+  {
+    "id": 840,
+    "name": "Port Guardian"
+  },
+  {
+    "id": 841,
+    "name": "Colossus Raider"
+  },
+  {
+    "id": 842,
+    "name": "Spitting Camel"
+  },
+  {
+    "id": 843,
+    "name": "Water-Logged Wizard"
+  },
+  {
+    "id": 844,
+    "name": "Frostguard Warrior"
+  },
+  {
+    "id": 845,
+    "name": "Marlai Singariel"
+  },
+  {
+    "id": 846,
+    "name": "Saltwater Mage"
+  },
+  {
+    "id": 847,
+    "name": "Asel Alagosdil"
+  },
+  {
+    "id": 848,
+    "name": "Mystic Scaleweaver"
+  },
+  {
+    "id": 849,
+    "name": "New Beluroc Aegis"
+  },
+  {
+    "id": 850,
+    "name": "Grand Consul Minion"
+  },
+  {
+    "id": 851,
+    "name": "Kanaaq Miner"
+  },
+  {
+    "id": 852,
+    "name": "Vengeful Monk"
+  },
+  {
+    "id": 853,
+    "name": "Spellmonger"
+  },
+  {
+    "id": 854,
+    "name": "Lunaki Howler"
+  },
+  {
+    "id": 855,
+    "name": "A'lan Musketeer"
+  },
+  {
+    "id": 856,
+    "name": "Great Bear Druid"
+  },
+  {
+    "id": 864,
+    "name": "Dire Bear"
+  },
+  {
+    "id": 865,
+    "name": "Moros Malik"
+  },
+  {
+    "id": 914,
+    "name": "Captain Frankie"
+  }
+]

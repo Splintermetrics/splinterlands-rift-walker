@@ -1,0 +1,106 @@
+{
+  "suggested": {
+    "skip": {
+      "victories": 27,
+      "guardians": 116,
+      "purchases": 0,
+      "shardsLeft": 14033
+    },
+    "recruits": {
+      "victories": 26,
+      "guardians": 116,
+      "purchases": 166,
+      "shardsLeft": 9308
+    },
+    "supplies": {
+      "victories": 30,
+      "guardians": 121,
+      "purchases": 114,
+      "shardsLeft": 8513
+    },
+    "usual": {
+      "victories": 29,
+      "guardians": 121,
+      "purchases": 251,
+      "shardsLeft": 5164
+    }
+  },
+  "earth": {
+    "skip": {
+      "victories": 36,
+      "guardians": 147,
+      "purchases": 0,
+      "shardsLeft": 17131
+    },
+    "recruits": {
+      "victories": 36,
+      "guardians": 147,
+      "purchases": 194,
+      "shardsLeft": 10746
+    },
+    "supplies": {
+      "victories": 37,
+      "guardians": 147,
+      "purchases": 134,
+      "shardsLeft": 9843
+    },
+    "usual": {
+      "victories": 39,
+      "guardians": 152,
+      "purchases": 296,
+      "shardsLeft": 5861
+    }
+  },
+  "life": {
+    "skip": {
+      "victories": 19,
+      "guardians": 104,
+      "purchases": 0,
+      "shardsLeft": 13037
+    },
+    "recruits": {
+      "victories": 18,
+      "guardians": 104,
+      "purchases": 158,
+      "shardsLeft": 7912
+    },
+    "supplies": {
+      "victories": 19,
+      "guardians": 105,
+      "purchases": 101,
+      "shardsLeft": 8043
+    },
+    "usual": {
+      "victories": 24,
+      "guardians": 112,
+      "purchases": 237,
+      "shardsLeft": 4766
+    }
+  },
+  "fire": {
+    "skip": {
+      "victories": 16,
+      "guardians": 98,
+      "purchases": 0,
+      "shardsLeft": 12660
+    },
+    "recruits": {
+      "victories": 23,
+      "guardians": 107,
+      "purchases": 162,
+      "shardsLeft": 8172
+    },
+    "supplies": {
+      "victories": 11,
+      "guardians": 90,
+      "purchases": 98,
+      "shardsLeft": 6931
+    },
+    "usual": {
+      "victories": 26,
+      "guardians": 111,
+      "purchases": 232,
+      "shardsLeft": 4970
+    }
+  }
+}

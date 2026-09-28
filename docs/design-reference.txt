@@ -1,0 +1,158 @@
+Splinterlands: Rift Walker — Design Reference
+A roguelike deck-crawler built on real Splinterlands card data, stats, and lore. Players fight through a branching map using their actual owned collection (or a rotating trial pool for guests), with roguelike tension driven by ruleset variance and a buyback/reroll system rather than persistent HP.
+
+1. Core Concept
+Genre: Roguelike deck-crawler (Slay the Spire-style branching map), single-player.
+Card source: The player's real Splinterlands collection is their entire card pool. No drafting new cards mid-run — progression is about unlocking access to what you own, not acquiring new cards.
+Stats: Real Splinterlands card stats, abilities, and rulesets are used as-is. No parallel stat system. This preserves balance, player skill transfer, and the "collection = power" hook that ties back into the real game's economy.
+Battle reset: Every node battle resets to full strength (no persistent HP between fights). Tension comes from node choice, ruleset/mana-cap variance, and the buyback economy — not attrition.
+2. Run Structure
+A run = one "Rift" expedition through a branching map, divided into 3 acts, each themed to a Splinter's home realm.
+Each act ends in a Guardian boss fight (see Section 5).
+Between acts: a Rift Camp rest stop for a run-long upgrade choice.
+Node types
+Node	Function
+Standard Fight	Baseline battle, baseline reward
+Elite Fight	Harder AI team, better reward tier, chance of bonus Rift Token
+Mystery (???)	Wide, unpredictable outcome — fight, free reward, or shop-lite. Deliberately not flattened, to preserve map-choice tension
+Shop	Spend Rift Shards on Rift Tokens, ability tokens, mana boosts
+Rest / Rift Camp	No income; spend the visit on a buff, debuff removal, or banking a Rift Token
+Guardian (boss)	End of act. Biggest reward + guaranteed Rift Token + guaranteed epic-or-better ability token
+What nodes reward (since cards aren't a reward)
+Loadout expansion — extra team slots or Archon swaps (Rift-only rule bends)
+Mana artifacts — temporary or run-long mana cap adjustments
+Rarity unlocks — temporarily unlock a higher rarity tier for the rest of the act
+Ability tokens — graft a temporary ability onto a monster (see Section 6)
+Ruleset re-rolls — swap an unfavorable active ruleset
+Cosmetic/meta unlocks — foils, titles, account-wide progression currency
+3. Failure & Buyback Economy
+Losing a battle does not end the run immediately.
+Rift Tokens (start with 2–3 per run) can be spent to reroll a lost node: the node regenerates with a new enemy team, ruleset, and mana cap (a mulligan, not a same-fight retry).
+Run ends only when a battle is lost with 0 Rift Tokens remaining.
+Earning more Rift Tokens mid-run
+Rift Camp rest stops (as a choice option)
+Elite/Guardian win rewards
+Shop purchases (40 Rift Shards each)
+Escalating reroll reward penalty
+Rerolled wins pay out less, on an escalating curve per run (resets each new run):
+
+Reroll # this run	Reward reduction
+1st	10%
+2nd	20%
+3rd	30%
+4th+	40% (cap)
+Guardian/boss reroll penalties are capped lower (e.g. max 20%) or hit only a "bonus" reward slot, since a rough boss fight shouldn't be double-punished on the reward that matters most.
+
+4. Combat Philosophy
+Full reuse of real Splinterlands rules: mana cap, melee/ranged/magic attack types, speed-based turn order, and existing ability keywords (Sneak, Snipe, Heal, Thorns, etc.).
+Real rulesets (Equal Power, Reverse Speed, No Melee, etc.) are the primary difficulty lever — varying mana caps and rulesets per node creates roguelike randomness without touching card stats.
+Boss fights may get a one-time, fight-scoped stat bump (standard roguelike boss-scaling), but this never changes a card's stats for any other use.
+5. Rift Modifiers (beyond base Splinterlands rulesets)
+Real Splinterlands rulesets (Equal Opportunity, Reverse Speed, No Melee, Explosive Weaponry, Silenced Summoners, etc.) remain the primary combat-difficulty lever, unchanged. Rift Modifiers are a separate, additional layer: run-economy and node-structure effects that only make sense inside a roguelike expedition, layered on top of a node's normal ruleset(s) rather than replacing them. A node can carry 0–1 Rift Modifiers in addition to its real ruleset(s); frequency increases in Acts 2–3.
+
+Modifier	Effect
+Unstable Rift	The active ruleset(s) are re-rolled once, automatically, at the start of round 2 — teams already committed, so players must draft for uncertainty rather than a known rule
+Echo	The first friendly monster that dies returns for exactly one turn at 1 HP before being removed for good (no ability triggers on the echoed turn beyond a basic attack)
+Rift Surge	Mana cap is 4–6 higher than normal for this node, but the reward is reduced by the same escalating curve as a reroll (see Section 3) — a risk/reward node for players who want to field bigger teams
+Corrupted Mana	Spending a Rift Token to reroll this node raises the mana cap requirement by +2 for the reroll attempt — makes rerolling a real cost on top of the reward penalty, not just a free mulligan
+Fractured Loadout	One random team slot is locked to a specific rarity tier (common-only, or epic-or-better) for this fight only — forces a lineup compromise without touching stats
+Bloodprice Shard	Shard reward for this node is roughly doubled, but a loss here costs 1 Rift Token even if the player had planned to walk away rather than reroll (loss is never optional-cost elsewhere)
+Rift Anomaly	Both teams' Archons are silenced for round 1 only, then function normally from round 2 on — early-game variant of Silenced Summoners rather than a full-fight one
+Design intent: Rift Modifiers should never require new card stats or new ability keywords — only mana cap, timing, token, and reward-side effects — so they stay implementable purely as run-state logic without touching the combat engine described in Section 4.
+
+6. Guardian Boss Roster
+Each Guardian is built as an Archon (sets the fight's rules) + Legendary Unit (the boss you fight) pairing.
+
+Act	Archon	Legendary Unit	Notes
+Fire	Yodin Zaku	Elemental Phoenix	Legendary magic attacker (Flying/Blast/Magic Reflect/Dodge); buffs magic/ranged, aggressive early boss
+Water	Valnamor	Phantom of the Abyss or Ruler of the Seas	Valnamor (+1 Speed/+1 Magic/+1 Health) fits either magic-heavy legendary unit; could alternate
+Earth	Scarred Llama Mage	Kron the Undying	Real game's canonical "Llama-Kron Duo" pairing
+Life	Captain Frankie	Angel of Light	Inspire/True Strike kit + Resurrect on the boss unit; support-style boss that keeps coming back
+Death	Mimosa Nightshade	Death Ranger	Mimosa's Void + Affliction debuff kit reinforces Death Ranger's Void Armor + Scavenger attrition style
+Dragon	Selenia Sky	Robo-Dragon Knight	+1 ranged Archon buff; tanky boss
+Neutral (secret/final)	Lux Vega	Dr. Blight (Neutral)	Lux Vega is the only Neutral Archon — fits as a finale that remixes earlier rules
+All 6 Guardian pairings are now locked (see table above).
+
+7. Ability Token System
+Tokens graft a temporary ability onto a monster that doesn't naturally have it. Higher tiers last longer (run-scoped) and carry real drawbacks pulled from existing Splinterlands ability logic (e.g. Blast users are typically slow, Thorns users typically squishy).
+
+Tier	Scope	Examples
+Common	Single fight, no drawback	Sneak, Snipe, Reach, Swiftness
+Rare	Single fight, small drawback	Thorns (-1 HP), Blast (-1 speed), Heal (+1 mana cost), Piercing
+Epic	Run-long (act), real drawback	Taunt (loses Dodge/Phase), Void Armor (-1 max HP), Divine Shield (one-time/act), Demoralize+Cripple (-1 speed permanently)
+Legendary	Run-defining	Resurgence (second life, 1 active max), Bloodline Dominion (ignore element restriction once), Empower (+1 Power while unattacked)
+8. Rift Shard Economy
+Drop rates by node
+Node type	Shard range
+Standard Fight	8–14 (avg 11)
+Elite Fight	18–26 (avg 22)
+Mystery	8–20+ (wide, intentionally unpredictable)
+Rest/Camp	0 (spends into a choice instead)
+Guardian (boss)	40–55 (avg 47) + guaranteed Rift Token + epic-or-better token
+Estimated total per act (clean run, no rerolls): ~110 shards. Full 3-act run: ~330 shards.
+
+Shop prices
+Item	Price
+Sneak Token (common)	15
+Blast Token (rare)	30
+Rift Token	40
+Void Armor Token (epic)	55
+Resurgence Token (legendary)	90
+This paces out to roughly 3–4 real purchases across a full clean run — enough for meaningful choices without trivializing the run.
+
+9. Core Screens (mockups built in-session)
+Run Map — branching node path, color-coded by node type (Fight/Elite/Shop/Mystery/Rest/Boss), current position highlighted.
+Battle Screen — active ruleset banner, mana cap bar, selected Archon, 6 numbered team slots, scrollable collection tray to draft from.
+Post-Battle Screen — Victory/Defeat toggle. Victory shows reward breakdown (with reroll penalty tag if applicable). Defeat shows Rift Token count and the reroll/end-run choice.
+Shop Screen — Rift Shard balance, Rift Token purchase, ability tokens by rarity (color-coded), mana boost item.
+10. Hive Blockchain & DEC Integration
+Confirmed technical facts
+Splinterlands runs on the Hive blockchain; cards are Hive-based NFTs.
+A public API endpoint, getPlayerCollectionCards(username), already returns a player's owned cards — no need to query raw Hive blocks.
+Card stats come from a separate lookup (getAllCardDetails / getCardDetailsFromUid) cross-referenced against owned card IDs.
+Reading a collection is public and read-only — no private key or wallet signature needed for a simple lookup.
+DEC (Dark Energy Crystals) is Splinterlands' real, active in-game currency, earned via battles and spendable on cards/rentals/items.
+Splinterlands has a real affiliate/referral system (links formatted as splinterlands.com?ref=username).
+Cards can be bridged off Hive to other chains (Wax, wrapped Ethereum/BSC) — bridged-out cards won't appear in the Hive-side collection call. Decision: only count native-Hive cards for v1; bridged cards are simply unavailable to import.
+Community tooling confirms this API shape: the open-source splinterlands-mcp server (read-only, no private keys) wraps the exact endpoints this section assumes — cards_collection (→ GET /cards/collection/{username}) for collection import, and cards_get_details / cards_find for stat lookups by card/edition. It's rate-limited (2 req/s) and meant for prototyping/dev use, not as the production data layer, but it's a good way to validate the collection-import + stat-lookup join logic before writing it from scratch, and to pull real edition-filtered card lists (e.g. the Foundation Set) during Phase 0/1 build-out.
+Onboarding flow (3 paths)
+Link existing Hive account — sign in via Hive Keychain/HiveAuth (only needed to verify wallet ownership, not for transactions, since DEC is sandboxed for now).
+Create a Hive account — routed through Splinterlands' real affiliate signup link.
+Play as guest — uses a game-owned "house" pool. Important: this is a static local card pool, not a live shared Hive wallet — a single real wallet can't safely hold funds on behalf of many simultaneous guests (custody risk, no way to attribute earnings per guest).
+Currency decision (locked)
+DEC stays fully sandboxed for now, for both guests and linked-wallet players. No real on-chain DEC transactions in v1.
+Guest-mode progress is a fully separate sandbox — it does not carry over or convert if a guest later links a real Hive account. Linking simply starts a fresh run against their real collection.
+Real DEC interchangeability (spendable back in the main Splinterlands marketplace) is deferred — revisit only once drop-rate economy and anti-abuse protections are proven out, and likely requires Splinterlands' own economic sign-off given it would affect real token supply.
+11. Guest / Trial Pool Specifics
+Structure
+Decision (locked): the guest pool is built from Splinterlands' official Foundation Set, not a hand-curated 12-card list. Foundation is a real, currently-maintained free/soulbound card set the live game already uses for new-player onboarding — using it means the guest pool inherits Splinterlands' own balance work and stays in sync if they ever rebalance it, instead of Rift Walker maintaining a parallel curated list.
+
+5 splinter Archons in Foundation — Fire, Water, Earth, Life, Death. Foundation has no Dragon-specific cards, which actually matches the real game: Dragon has never had its own standalone starter pool, since it always pairs with a second splinter.
+Neutral is a shared pool available to every Archon regardless of splinter, per Foundation's own structure.
+Dragon Archons pick a second splinter to pair with (matching the real game's dual-element access), and draw from that splinter's Foundation slice + Neutral — there is no separate "Dragon slice" to draw from.
+Foundation Set structure (per splinter)
+Pool	Foundation size
+Each splinter (Fire/Water/Earth/Life/Death)	8 units + 1 summoner
+Neutral (shared across all Archons)	8 units
+Open implementation task: the exact 8+1 card list per splinter needs to be pulled live from the game's own API (getAllCardDetails / cards_find, filtered to the Foundation edition) during the Phase 1 data-layer build — not hand-typed into this doc — so it can never drift out of sync with the real, currently-maintained set.
+
+Resulting Trial Collection size
+Archon pick	Composition	Total available
+Fire/Water/Earth/Life/Death	Own splinter's 8 Foundation units + Neutral's 8	~16 cards
+Dragon	Paired splinter's 8 Foundation units + Neutral's 8 (no Dragon-specific slice)	~16 cards
+Coverage check (against the real Foundation Set, once pulled)
+Because the pool is now a fixed, real card set rather than a random sample, there's no draw-guarantee logic to build — but Phase 1 should confirm the actual Foundation cards clear the same bar the doc originally set: at least 1 melee, 1 ranged, and 1 magic unit, and a spread of low-mana and higher-mana options, in each 16-card Archon pool. If a specific pairing falls short (e.g. a splinter's Foundation slice is magic-light), that's worth flagging rather than silently shipping a lopsided guest experience.
+Guest Archon unlock ramp (guest mode only — skipped entirely for linked wallets)
+Trigger	Unlocks
+Start	Fire, Earth, Life (chosen for playstyle contrast: aggro / stall / sustain)
+1st completed run	Water
+2nd completed run	Death
+3rd completed run	Dragon (gated last — requires the extra splinter-pairing decision)
+Unlock trigger is run completion, not wins — keeps guest mode low-stakes.
+Progress is saved via cookie/local storage on that device only. Clearing browser data or switching devices resets the ramp. Worth a small in-UI note ("progress saved to this device").
+Linked-wallet players skip this ramp completely and get full Archon access (per what they actually own) from run one — the ramp is a guest teaching tool, not a universal restriction.
+12. Open Threads / Not Yet Decided
+Pull the real 8+1-per-splinter Foundation Set card list from the live API (Section 11) — deferred to Phase 1 data-layer build, not a design decision left open
+Fine-tuning shard/shop numbers once real playtesting data exists
+Whether/when to revisit real DEC interchangeability
+Playtest the Section 5 Rift Modifiers for pacing/fairness once the combat engine exists — the list is drafted but unvalidated

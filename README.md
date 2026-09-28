@@ -2,6 +2,8 @@
 
 A playable local prototype of the supplied roguelike design. Build a team from real Splinterlands cards, traverse three branching acts, and challenge the act Guardians. Losing a battle spends chances, not persistent health.
 
+**[Play Rift Walker in your browser](https://splintermetrics.github.io/splinterlands-rift-walker/).** This public preview saves progress in that browser. It starts a separate expedition from any local save at `localhost:4173`.
+
 ## Run
 
 Requires Node.js 20 or later. No packages need installing.
